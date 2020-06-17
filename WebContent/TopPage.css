@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+body{
+ background-image: url("top2.JPG");
+}
+
+header h1{
+	font-family:'Homemade Apple', cursive;
+	color:#FFFF77;
+	font-size:60px;
+	text-align: center;
+}
+
+header h2 {
+	color:#CCCCCC;
+}
+
+button {
+	margin: 0 auto;
+	width:170px;
+    font-size:24px;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+ 	padding:8px 0 10px;
+    color:#fff;
+    background-color:#BDB76B;
+    border-radius:25px;
+}
+
+.setsinki {
+	 margin-top:50px;
+	 
+}
+
+.setlogin {
+	 margin-top:70px;
+}
+
+
+
+
+
+
+
+
+
+
+

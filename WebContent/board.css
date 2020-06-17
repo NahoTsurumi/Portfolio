@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.message {
+	color:red;
+}
+
+.tweet{
+	padding: 5px;
+  	border-top: solid 1px #EEE;
+}
+
+body{
+    max-width: 50%;
+  	margin: 0 auto;
+  	border: solid 1px #EEE;
+}
+
+.name{
+	float: left;
+	margin-right: 10px;
+}
+
+.content{
+	background: #FFF;
+	margin-top: 0;
+}

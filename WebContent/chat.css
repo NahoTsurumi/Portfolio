@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+body {
+	background-image:url("moon2.jpeg");
+}
+
+header h1 {
+	text-align:center;
+}

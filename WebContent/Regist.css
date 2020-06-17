@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+body {
+	background-image:url("top2.JPG");
+	color:#F0E68C;
+}
+
+header h1{
+	text-align:center;
+	font-style:oblique;
+	font-family: "ＭＳ 明朝","MS Mincho";
+	color:#F0E68C;
+	font-size:60px;
+}
+
+header h2 {
+	text-align:center;
+	font-style:oblique;
+	font-family: "ＭＳ 明朝","MS Mincho";
+	color:#FFFF77;
+}
+
+header p {
+	color:#A52A2A;
+	font-family: "ＭＳ 明朝","MS Mincho";
+	text-align:center;
+	font-weight:bold;
+	font-seze:35px;
+}
+
+label {
+	font-size:35px;
+	color:#F0E68C;
+}
+
+input{
+	color:white;
+  	font-family: Helvetica, Arial, sans-serif;
+  	font-weight:500;
+  	font-size: 18px;
+  	border-radius: 5px;
+  	line-height: 22px;
+  	background-color: transparent;
+  	border:2px solid #F0E68C;
+  	transition: all 0.3s;
+  	padding: 13px;
+  	margin-bottom: 15px;
+  	width:40%;
+  	box-sizing: border-box;
+  	outline:0;
+}
+
+button{
+	width:20%;
+	position: relative;
+  display: block;
+  width: 250px;
+  margin: 20px auto;
+  padding: 10px;
+  
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+  transform-style: flat;
+  transition: all 250ms ease-out;
+  
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+        transition: all 250ms ease-out;
+  }
+}
+
+.un {
+	text-align:center;
+	margin-top: 60px;
+}
+
+.pw {
+	text-align:center;
+	margin-top:40px;
+}
+
+.ps {
+	text-align:center;
+	margin-top:50px;
+}
+
+.rtn {
+	margin-top:45px;
+}
+
+.rtn a {
+	background: #F0E68C; /* 背景色 */
+  color: #777777; /* 文字色 */
+  padding: 16px 40px; /* 上下の余白、左右の余白 */
+  text-decoration: none; /* デフォルトで入るリンクの下線を消す */
+  border-radius: 30px; /* 角を丸くする */
+}
