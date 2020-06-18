@@ -1,18 +1,57 @@
 @charset "UTF-8";
 
+body{
+	background-image:url("moon3.jpg");
+    font-family: Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+h1{
+	width: 350px;
+  margin: 0 auto;
+}
+
+
 .message {
 	color:red;
+}
+
+.textbox {
+	width: 350px;
+  margin: 0 auto;
+  margin-top:50px;
+}
+
+.textbox-post {
+	border: 2px solid #F0E68C;  /* 枠線 */
+    border-radius: 0.67em;   /* 角丸 */
+    padding: 10px;          /* 内側の余白量 */
+    background-color: snow;  /* 背景色 */
+    width: 20em;             /* 横幅 */
+    height: 120px;           /* 高さ */
+    font-size: 1em;          /* 文字サイズ */
+    line-height: 1.2;        /* 行の高さ */
+}
+
+.buttonps {
+	width: 350px;
+   	margin: 0 auto;
+  	margin-top:20px;
+}
+
+.button-post {
+	width:200px;
+    font-size:24px;
+    font-weight:bold;
+    text-align:center;
+    padding:8px 0 10px;
+    color:#8B4513;
+    background-color:#F0E68C;
+    border-radius:15px;
 }
 
 .tweet{
 	padding: 5px;
   	border-top: solid 1px #EEE;
-}
-
-body{
-    max-width: 50%;
-  	margin: 0 auto;
-  	border: solid 1px #EEE;
 }
 
 .name{

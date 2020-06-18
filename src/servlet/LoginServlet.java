@@ -59,6 +59,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response, 
 	boolean flag = (boolean) request.getAttribute("flag");
 	
 	if (flag) {
+		
 		response.sendRedirect("localhost:8080/Portfolio/ChatServlet");
 	} else {
 		doGet(request, response);

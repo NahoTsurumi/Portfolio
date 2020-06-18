@@ -20,8 +20,10 @@ import servise.Select;
  */
 @WebServlet("/BoardServlet")
 public class BoardServlet extends HttpServlet {
+	
+	
 	private static final long serialVersionUID = 1L;
-	private DBAccess2 dbAccess;
+	private DBAccess2 dbAccess2;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -31,12 +33,12 @@ public class BoardServlet extends HttpServlet {
 	 * @param dbAccess 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response, Select dbAccess) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		dbAccess = new Select();
+		dbAccess2 = new Select();
 		
 		try {
-			dbAccess.execute(request);
+			dbAccess2.execute(request);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -51,34 +53,34 @@ public class BoardServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		String btn = request.getParameter("button");
 		System.out.println(btn);
 		
+		
 		try {
-			
-			if (btn.equals("POST")) {
-				String input =request.getParameter("text");
+				if (btn.equals("POST")) {
+				String input = request.getParameter("text");
 				
-				if(input.length() >= 50 || input.equals("") || input == null) {
-					request.setAttribute("message", "何も入力されていないか、100文字を超えています");
+				if(input.length() >= 70 || input.equals("") || input == null) {
+					request.setAttribute("message", "何も入力されていないか、70文字を超えています");
+					
 					doGet(request, response);
 					return;
-					
 				}
-				dbAccess = new Insert();
-				
-			}else {
-				dbAccess.execute(request);
+				dbAccess2 = new Insert();
 				
 			}
 			
-			dbAccess.execute(request);
+			
+			dbAccess2.execute(request);
 				
 				doGet(request, response);
-			} catch (Exception e) {
+		} catch (Exception e) {
 				System.out.println("Exception occured...");
 				System.out.println(e);
 			}
+
 	}
 		
 	}

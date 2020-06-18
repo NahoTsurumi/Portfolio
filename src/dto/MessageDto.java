@@ -1,11 +1,12 @@
 package dto;
 
-import java.sql.Timestamp;
-
 public class MessageDto {
+	
+	private int id;
+	
 
 	 String content;
-	 private Timestamp time;
+	 private String time;
 	 
 	 public String getContent() {
 		 return content;
@@ -15,11 +16,19 @@ public class MessageDto {
 		 this.content = content;
 	 }
 	 
-	 public Timestamp getTime() {
+	 public String getTime() {
 		 return time;
 	 }
 	 
-	 public void setTime(Timestamp time) {
+	 public void setTime(String time) {
 		 this.time =time;
 	 }
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 }

@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Eile geheme Basis des Mondesへようこそ！</title>
+<title>Schwarzes Brettへようこそ！</title>
 <link rel="stylesheet" type="text/css" href="TopPage.css">
 </head>
 <body>
 <header>
-<h1><strong>Eile geheme Basis des Mondes</strong></h1>
+<h1><strong>Schwarzes Brett</strong></h1>
 <h2><Marquee>プライベートコミュニティでみんなで話そう！</Marquee></h2>
 </header>
 		<div class="setsinki">

@@ -18,10 +18,10 @@ public class Insert implements DBAccess2 {
 			dao = new Dao();
 			if(dao.insertData(input) > 0) {
 				request.setAttribute("message", "投稿されました");
-				System.out.println("Insert seccess");
+				System.out.println("投稿されています");
 			} else {
 				request.setAttribute("message", "投稿できませんでした");
-				System.out.println("Insert failed...");
+				System.out.println("投稿できませんでした...");
 			}
 		} finally {
 			if(dao != null) dao.close();

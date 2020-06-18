@@ -51,8 +51,9 @@ public class Dao {
 			 MessageDto dto;
 			 while(rs.next()) {
 				dto = new MessageDto();
+				dto.setId(rs.getInt("id"));
 				dto.setContent(rs.getString("content"));
-				dto.setTime(rs.getTimestamp("time"));
+				dto.setTime(rs.getString("date"));
 				list.add(dto);
 			 }
 			 rs.close();
@@ -60,7 +61,8 @@ public class Dao {
 			 ps.close();
 		 }
 		 
-		 return (ArrayList<MessageDto>) list.stream().sorted(comparator).collect(Collector.toList());
+		 Comparator<MessageDto> comparator = Comparator.comparing(MessageDto::getId).reversed();
+		 return (ArrayList<MessageDto>) list.stream().sorted(comparator).collect(Collectors.toList());
 		 
 	 }
 	 

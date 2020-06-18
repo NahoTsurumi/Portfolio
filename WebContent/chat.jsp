@@ -10,11 +10,12 @@
 <body>
 
 <header>
-<h1>${bean.name}さんようこそ！</h1>
+<h1>ようこそ！</h1>
 <p><Marquee>気になるコミュニティで今すぐ会話しよう！</Marquee></p>
-<h2></h2>
 </header>
 
+<form action="BoardServlet" method="post">
+<a href="BoardServlet">コスメ好きな人!</a>
 
 </body>
 </html>
