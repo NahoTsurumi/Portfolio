@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 <body>
 
 <header>
-<h1>Login</h1>
+<h1>LOGIN</h1>
 <h2>今すぐコミュニティに参加してみましょう</h2>
 <p>${message}</p>
 </header>
@@ -23,7 +24,7 @@
  	<input type="password" required="required" name="pass"  placeholder="パスワード"></label></p>
  	</div>
  	<div class="ps">
- 	<p><button type="submit" onclick="location.href=‘サイトURL' " name="button" value="login">LOGIN</button></p>
+ 	<p><button type="submit" name="button" value="login">LOGIN</button></p>
  	</div>
  	<div class="rtn">
  	<a href="ToppageServlet">←　Return</a>

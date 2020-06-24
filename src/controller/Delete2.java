@@ -4,23 +4,23 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 
-import dao.Dao;
-import dbAccess.DBAccess2;
+import dao.Dao2;
+import dbAccess.DBAccess3;
 
-public class Delete implements DBAccess2 {
+public class Delete2 implements DBAccess3 {
 
+	@Override
 	public void execute(HttpServletRequest request) throws SQLException {
 		// TODO 自動生成されたメソッド・スタブ
-		
-		Dao dao = null;
+		Dao2 dao2 = null;
 		int n = 0;
 		
 		String id = request.getParameter("id");
 		System.out.println(id);
 		
 		try {
-			dao =new Dao();
-			n = dao.delete(id);
+			dao2 =new Dao2();
+			n = dao2.delete(id);
 			
 			if (n > 0) {
 				request.setAttribute("message", "投稿が削除されました");
@@ -31,7 +31,7 @@ public class Delete implements DBAccess2 {
 			}
 		
 		}finally {
-			if(dao != null) dao.close();
+			if(dao2 != null) dao2.close();
 		}
 	}
 

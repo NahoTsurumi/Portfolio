@@ -37,10 +37,16 @@ public class ProfileDao {
 		ps.setString(1,name);
 		ps.setString(2, pass);
 		
+		
+		boolean zr = false;
+		
 		try {
 			rs = ps.executeQuery();
-			rs.last();
-			row = rs.getRow();
+			zr = rs.next();
+			
+			if(zr == true) {
+				row += 1;
+			}
 		} finally {
 			ps.close();
 		}

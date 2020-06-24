@@ -2,15 +2,15 @@ package dbAccess;
 
 import java.sql.SQLException;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import dao.ProfileDao;
 
 public class SelectForLogin implements DBAccess{
 
+		@Override
 		public void execute(HttpServletRequest request) throws SQLException {
-			
+			// TODO 自動生成されたメソッド・スタブ
 			ProfileDao pBean = null;
 			int n = 0;
 			
@@ -36,12 +36,6 @@ public class SelectForLogin implements DBAccess{
 			}finally {
 				if(pBean != null)pBean.close();
 			}
-		}
-
-		@Override
-		public void execute(HttpServlet request) throws SQLException {
-			// TODO 自動生成されたメソッド・スタブ
-			
 		}
 		
 	}

@@ -9,7 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import bean.ProfileBean;
 import dbAccess.SelectForLogin;
 
 /**
@@ -32,12 +32,8 @@ public class ChatServlet extends HttpServlet {
 		
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response, SelectForLogin dbAccess) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response, SelectForLogin dbAccess, ProfileBean pBean) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-
-	}
+		
+}
 }

@@ -7,12 +7,33 @@ body{
 
 h1{
 	width: 350px;
-  margin: 0 auto;
+  	margin: 0 auto;
 }
+
+.lgout {
+	display: inline-block;
+	padding: 0.1em 0.3em;
+	transition: all .3s;
+	color:#F0E68C;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.lgout:hover{
+	color: #F0E68C;
+	background-color: #444444;
+}
+
+.logout {
+	width: 350px;
+  	margin-left:1000px;
+}
+
 
 
 .message {
 	color:red;
+	text-align:center;
 }
 
 .textbox {
@@ -50,8 +71,12 @@ h1{
 }
 
 .tweet{
-	padding: 5px;
+	padding: 100px;
   	border-top: solid 1px #EEE;
+}
+
+.id {
+	color: #AAA;
 }
 
 .name{
@@ -63,3 +88,15 @@ h1{
 	background: #FFF;
 	margin-top: 0;
 }
+
+.delete {
+	border: 0px;
+    width:30px;
+    height:24px;
+    background: url("deletebutton.png") left top no-repeat;
+}
+
+.control {
+	margin-top: 5px;
+}
+

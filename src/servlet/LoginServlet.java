@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dbAccess.DBAccess;
 import dbAccess.SelectForLogin;
 
 
@@ -19,12 +20,10 @@ import dbAccess.SelectForLogin;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-
 	
-
-
-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	request.setCharacterEncoding("UTF-8");
 	
 	HttpSession session = request.getSession(false);
@@ -44,10 +43,10 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 
 
-protected void doPost(HttpServletRequest request, HttpServletResponse response, SelectForLogin dbAccess) throws ServletException, IOException {
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	request.setCharacterEncoding("utf-8");
 	
-	dbAccess = new SelectForLogin();
+	DBAccess dbAccess = new SelectForLogin();
 	
 	try {
 		dbAccess.execute(request);
@@ -60,8 +59,11 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response, 
 	
 	if (flag) {
 		
-		response.sendRedirect("localhost:8080/Portfolio/ChatServlet");
+		System.out.println("出力されています");
+		response.sendRedirect("http://localhost:8080/Portfolio/ChatServlet");
+		
 	} else {
+		System.out.println("エラー");
 		doGet(request, response);
 	}
 		

@@ -13,11 +13,12 @@ import dto.MessageDto;
 
 public class Dao {
 	
-	 private static final Collectors Collector = null;
-	public static Object dao;
-	private Connection con;
+	PreparedStatement ps = null;
+	ResultSet rs = null;
+	ArrayList<MessageDto> list = null;
+	 private Connection con;
 	 private String sql;
-	private Comparator<? super MessageDto> comparator;
+	 
 	 
 	 public Dao() throws SQLException {
 		 
@@ -49,6 +50,7 @@ public class Dao {
 			 rs = ps.executeQuery();
 			 list = new ArrayList<>();
 			 MessageDto dto;
+			 
 			 while(rs.next()) {
 				dto = new MessageDto();
 				dto.setId(rs.getInt("id"));
@@ -72,7 +74,17 @@ public class Dao {
 	 }
 	 
 	 
-	 private int executeUpdate(String sql, String param) throws SQLException {
+	 
+	 public int delete(String id) throws SQLException {
+		 String sql ="delete from tweet where id = ?";
+		 return executeUpdate(sql, id);
+		}
+	 
+	 
+	 
+
+
+	private int executeUpdate(String sql, String param) throws SQLException {
 		 PreparedStatement ps = null;
 		 int n = 0;
 		 
@@ -90,7 +102,8 @@ public class Dao {
 		 return n;
 	 }
 
-	 private boolean isNumber(String num) {
+	
+	private boolean isNumber(String num) {
 		 try {
 			 Integer.parseInt(num);
 			 return true;
@@ -98,5 +111,31 @@ public class Dao {
 			 return false;
 		 }
 	 }
-	 
+	
+	
+	 public ArrayList<MessageDto> getMessageFromcontent(String content) throws SQLException {
+			
+		 	sql ="SELECT * from tweet where content like ?";
+		 	ps = con.prepareStatement(sql);
+		 	ps.setString(1, "%" + content + "%");
+		 	return search(ps);
+		}
+
+	private ArrayList<MessageDto> search(PreparedStatement ps) throws SQLException {
+		
+		try {
+			rs = ps.executeQuery();
+			list = new ArrayList<>();
+			MessageDto dto;
+			while(rs.next()) {
+				dto = new MessageDto();
+				dto.setContent(rs.getString("content"));
+				list.add(dto);
+			}
+		} finally {
+			ps.close();
+		}
+		
+		return list;
+	}
 }

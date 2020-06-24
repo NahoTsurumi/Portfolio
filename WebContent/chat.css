@@ -6,4 +6,51 @@ body {
 
 header h1 {
 	text-align:center;
+	font-size:50px;
+}
+
+header p {
+	margin-top:20px;
+	font-size:30px;
+}
+
+a {
+	background: url("lock.png") no-repeat center left;
+	font-size:25px;
+	color:#F0E68C;
+	padding-top:40px;
+	position: relative;
+  	display: inline-block;
+  	transition: .3s;
+}
+
+a::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #222222;
+  transition: .3s;
+  transform: translateX(-50%);
+}
+
+a:hover::after{
+  width: 100%;
+}
+
+.a1{
+	width: 350px;
+  	margin: 0 auto;
+}
+
+.a2 {
+	width: 350px;
+  	margin: 0 auto;
+}
+
+.a3 {
+	width: 350px;
+  	margin: 0 auto;
 }
