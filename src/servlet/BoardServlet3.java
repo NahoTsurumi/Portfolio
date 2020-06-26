@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import controller.Delete3;
 import dbAccess.DBAccess4;
+import servise.HiddenWord;
 import servise.Insert3;
 import servise.Select3;
 
@@ -60,7 +61,50 @@ public class BoardServlet3 extends HttpServlet {
 					
 					doGet(request, response);
 					return;
+				}else if (HiddenWord.isHiddenWord(input)) {
+					System.out.println("in if");
+					request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+					doGet(request, response);
+					return;
+
+				}else if (HiddenWord.isHiddenWord2(input)) {
+					System.out.println("in if2");
+					request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+					doGet(request, response);
+					return;
+
+				}else if (HiddenWord.isHiddenWord3(input)) {
+					System.out.println("in if3");
+					request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+					doGet(request, response);
+					return;
+
+				}else if (HiddenWord.isHiddenWord4(input)) {
+					System.out.println("in if4");
+					request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+					doGet(request, response);
+					return;
+
+				}else if (HiddenWord.isHiddenWord5(input)) {
+					System.out.println("in if5");
+					request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+					doGet(request, response);
+					return;
+					
+				}else if (HiddenWord.isHiddenWord6(input)) {
+					System.out.println("in if6");
+					request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+					doGet(request, response);
+					return;
 				}
+				
+				
 				dbAccess4 = new Insert3();
 				
 			}else {

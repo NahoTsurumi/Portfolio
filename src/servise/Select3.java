@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
-import dao.Dao2;
+import dao.Dao3;
 import dbAccess.DBAccess4;
 import dto.MessageDto;
 
@@ -14,10 +14,10 @@ public class Select3 implements DBAccess4 {
 	@Override
 	public void execute(HttpServletRequest request) throws SQLException {
 	
-		Dao2 dao2 =null;
+		Dao3 dao3 =null;
 		try {
-			dao2 = new Dao2();
-			ArrayList<MessageDto> list = dao2.getListAll();
+			dao3 = new Dao3();
+			ArrayList<MessageDto> list = dao3.getListAll();
 			
 			if(list != null) {
 				request.setAttribute("list", list);
@@ -25,7 +25,7 @@ public class Select3 implements DBAccess4 {
 				request.setAttribute("message", "まだデータがありません");
 			}
 		} finally {
-			if(dao2 != null) dao2.close();
+			if(dao3 != null) dao3.close();
 		}
 	}
 

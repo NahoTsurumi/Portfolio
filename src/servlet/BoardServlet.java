@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.Delete;
-import dao.Dao;
 import dbAccess.DBAccess2;
 import servise.HiddenWord;
 import servise.Insert;
@@ -38,8 +37,9 @@ public class BoardServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		dbAccess2 = new Select();
+		
 
 		try {
 			dbAccess2.execute(request);
@@ -61,38 +61,79 @@ public class BoardServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String btn = request.getParameter("button");
-		System.out.println(btn);
 
 		try {
-			if (btn.equals("POST")) {
-				String input = request.getParameter("text");
-				String content = request.getParameter("content");
-				HiddenWord hidword = null;
+	
+					if (btn.equals("POST")) {
+							String input = request.getParameter("text");
+								// HiddenWord hidword = null;
+							System.out.println(HiddenWord.isHiddenWord(input));
 
-				if (input.length() >= 70 || input.equals("") || input == null) {
-					request.setAttribute("message", "何も入力されていないか、70文字を超えています");
+							if (input.length() >= 70 || input.equals("") || input == null) {
+								request.setAttribute("message", "何も入力されていないか、70文字を超えています");
+
 					
-				if (content.equals(hidword)) {
-					request.setAttribute("message", "この投稿には不適切な言葉が入っています");
+								doGet(request, response);
+								return;
 					
-				}
-					doGet(request, response);
-					return;
-				}
-				dbAccess2 = new Insert();
+							}else if (HiddenWord.isHiddenWord(input)) {
+								System.out.println("in if");
+								request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+								doGet(request, response);
+								return;
 
-			} else {
-				dbAccess2 = new Delete();
-			}
+							}else if (HiddenWord.isHiddenWord2(input)) {
+								System.out.println("in if2");
+								request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+								doGet(request, response);
+								return;
 
-			dbAccess2.execute(request);
+							}else if (HiddenWord.isHiddenWord3(input)) {
+								System.out.println("in if3");
+								request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+								doGet(request, response);
+								return;
 
-			doGet(request, response);
-		} catch (Exception e) {
-			System.out.println("Exception occured...");
-			System.out.println(e);
+							}else if (HiddenWord.isHiddenWord4(input)) {
+								System.out.println("in if4");
+								request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+								doGet(request, response);
+								return;
+
+							}else if (HiddenWord.isHiddenWord5(input)) {
+								System.out.println("in if5");
+								request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+								doGet(request, response);
+								return;
+					
+							}else if (HiddenWord.isHiddenWord6(input)) {
+								System.out.println("in if6");
+								request.setAttribute("message", "不適切な言葉が使われている可能性があります");
+					
+								doGet(request, response);
+								return;
+							}
+				
+							dbAccess2 = new Insert();
+
+							} else {
+								dbAccess2 = new Delete();
+							}
+
+							dbAccess2.execute(request);
+
+								doGet(request, response);
+							} catch (Exception e) {
+								System.out.println("Exception occured...");
+								System.out.println(e);
+		
 		}
-
+		
 	}
 
 }

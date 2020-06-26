@@ -32,8 +32,12 @@ public class ChatServlet extends HttpServlet {
 		
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response, SelectForLogin dbAccess, ProfileBean pBean) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response, SelectForLogin dbAccess, ProfileBean pBean) 
+			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+	
+		
+		
 		
 }
 }

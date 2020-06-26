@@ -13,6 +13,8 @@ import dto.MessageDto;
 
 public class Dao {
 	
+	
+	
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 	ArrayList<MessageDto> list = null;

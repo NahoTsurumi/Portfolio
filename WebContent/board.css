@@ -71,12 +71,12 @@ h1{
 }
 
 .tweet{
-	padding: 100px;
-  	border-top: solid 1px #EEE;
+	padding: 50px;
+  	border-top: medium solid #EEE;
 }
 
 .id {
-	color: #AAA;
+	color: #111111;
 }
 
 .name{
