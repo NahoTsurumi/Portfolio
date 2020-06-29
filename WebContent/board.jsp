@@ -13,19 +13,19 @@
 		<h1>コスメが好きな人！</h1>
 	</header>
 	
-   <ul>
-      <li id="nav1" class="toggle accordion-toggle"> 
-         <span class="icon-plus"></span>
-         <a class="menu-link" href="http://localhost:8080/Portfolio/ChatServlet">チャット一覧</a>
-      </li></ul>
+	<div class="chat-list">
+	<p>チャット一覧</p>
       <ul>
          <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet2">猫愛好家</a></li>
          <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet3">旅行好きな人集まれ~！</a></li>
-      </ul>
-<!-- menu-container -->
+      </ul></div>
+
+<form action="LogoutServlet" method="get">
 	<div class="logout">
-		<a class="lgout" href="http://localhost:8080/Portfolio/LoginServlet">ログアウト</a>
-	</div>
+		<input class="button-post" type="submit" value="ログアウト">
+	</div></form>
+	
+	
 	<div class="post">
 		<c:if test="${message != null}">
 			<p class="message">${message}</p>

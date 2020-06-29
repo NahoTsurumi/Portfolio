@@ -31,10 +31,9 @@ public class LoginServlet extends HttpServlet {
 	if(session != null) session.invalidate();
 	
 	
-	
 	response.setContentType("text/html; charset=UTF-8");
 	ServletContext context = getServletContext();
-	RequestDispatcher dis = context.getRequestDispatcher("/Login.jsp");
+	RequestDispatcher dis = context.getRequestDispatcher("/board.jsp");
 	dis.forward(request, response);
 	
 }
