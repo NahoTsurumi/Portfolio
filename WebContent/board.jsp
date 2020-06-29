@@ -12,19 +12,17 @@
 	<header>
 		<h1>コスメが好きな人！</h1>
 	</header>
-	
-	<div class="chat-list">
-	<p>チャット一覧</p>
-      <ul>
-         <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet2">猫愛好家</a></li>
-         <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet3">旅行好きな人集まれ~！</a></li>
-      </ul></div>
 
 <form action="LogoutServlet" method="get">
 	<div class="logout">
 		<input class="button-post" type="submit" value="ログアウト">
 	</div></form>
 	
+	<a class="menu-link" href="http://localhost:8080/Portfolio/ChatServlet">チャット一覧</a>
+	<br>
+     <a class="menu-link" href="http://localhost:8080/Portfolio/BoardServlet2">猫愛好家</a>
+     <br>
+     <a class="menu-link" href="http://localhost:8080/Portfolio/BoardServlet3">旅行好きな人集まれ~！</a>
 	
 	<div class="post">
 		<c:if test="${message != null}">

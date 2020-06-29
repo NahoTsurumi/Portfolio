@@ -12,15 +12,6 @@
 <header>
 <h1>旅行好きな人集まれ~！</h1>
 </header>
-	<ul>
-      <li> 
-         <span class="icon-plus"></span>
-         <a class="menu-link" href="http://localhost:8080/Portfolio/ChatServlet">チャット一覧</a>
-      </li></ul>
-      <ul>
-         <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet">コスメ好きな人！</a></li>
-         <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet2">猫愛好家</a></li>
-      </ul>
       
 <div class="logout">
 <a class="lgout" href="http://localhost:8080/Portfolio/LoginServlet">ログアウト</a>
@@ -29,6 +20,14 @@
 <c:if test="${message != null}">
     <p class="message">${message}</p>
 </c:if>
+
+<ul>
+      <li><a class="menu-link" href="http://localhost:8080/Portfolio/ChatServlet">チャット一覧</a>
+      </li></ul>
+      <ul>
+         <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet">コスメ好きな人！</a></li>
+         <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet2">猫愛好家</a></li>
+      </ul>
 
 <form action="BoardServlet3" method="post">
  <div class="textbox">

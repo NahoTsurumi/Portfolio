@@ -10,20 +10,11 @@ h1{
   	margin: 0 auto;
 }
 
-chat-list{
-	margin-top:20px;
-}
-
-chat-list ul {
-}
 
 a {
-	font-size:15px;
+	font-size:5px;
 	color:#F0E68C;
-	padding-top:20px;
-	position: relative;
-  	display: inline-block;
-  	transition: .3s;
+	padding-top:10px;
 }
 
 
