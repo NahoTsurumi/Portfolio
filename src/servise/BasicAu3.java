@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dto.UserInfo;
+import dto.UserInfo3;
 
 @WebFilter("/BoardServlet3")
 public class BasicAu3 implements Filter {
@@ -58,7 +58,7 @@ public class BasicAu3 implements Filter {
                     String password = decoded.substring(pos + 1);
 
                     // 認証処理
-                    UserInfo user = authenticateUser(username, password);
+                    UserInfo3 user = authenticateUser(username, password);
 
                     if (user.userId == null || user.userId.equals("")) {
                         // ユーザー名がNULLの場合は認証に失敗したとみなして
@@ -112,12 +112,12 @@ public class BasicAu3 implements Filter {
     }
 
 	
-	private UserInfo authenticateUser(String username, String password) {
+	private UserInfo3 authenticateUser(String username, String password) {
         // ユーザー情報を保存するクラス(後述)のインスタンスを作成
-        UserInfo u = new UserInfo();
+        UserInfo3 u = new UserInfo3();
 
         // 認証処理
-        if (username.equals("test") && password.equals("3333")) {
+        if (username.equals("trip") && password.equals("6666")) {
             // ユーザー名とパスワードを設定
             u.userId = username;
             u.password = password;

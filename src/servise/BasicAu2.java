@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dto.UserInfo;
+import dto.UserInfo2;
 
 @WebFilter("/BoardServlet2")
 public class BasicAu2 implements Filter {
@@ -59,7 +59,7 @@ public class BasicAu2 implements Filter {
                     String password = decoded.substring(pos + 1);
 
                     // 認証処理
-                    UserInfo user = authenticateUser(username, password);
+                    UserInfo2 user = authenticateUser(username, password);
 
                     if (user.userId == null || user.userId.equals("")) {
                         // ユーザー名がNULLの場合は認証に失敗したとみなして
@@ -113,12 +113,12 @@ public class BasicAu2 implements Filter {
     }
 
 	
-	private UserInfo authenticateUser(String username, String password) {
+	private UserInfo2 authenticateUser(String username, String password) {
         // ユーザー情報を保存するクラス(後述)のインスタンスを作成
-        UserInfo u = new UserInfo();
+        UserInfo2 u = new UserInfo2();
 
         // 認証処理
-        if (username.equals("test") && password.equals("2222")) {
+        if (username.equals("cat") && password.equals("5555")) {
             // ユーザー名とパスワードを設定
             u.userId = username;
             u.password = password;

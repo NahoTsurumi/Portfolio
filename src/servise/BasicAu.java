@@ -116,7 +116,7 @@ public class BasicAu implements Filter {
         UserInfo u = new UserInfo();
 
         // 認証処理
-        if (username.equals("test") && password.equals("1111")) {
+        if (username.equals("cosme") && password.equals("4444")) {
             // ユーザー名とパスワードを設定
             u.userId = username;
             u.password = password;

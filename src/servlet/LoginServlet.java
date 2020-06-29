@@ -30,8 +30,6 @@ public class LoginServlet extends HttpServlet {
 	
 	if(session != null) session.invalidate();
 	
-	if(request.getAttribute("message") =="null") request.setAttribute("message", "名前とパスワードを入れて下さい");
-	
 	
 	
 	response.setContentType("text/html; charset=UTF-8");

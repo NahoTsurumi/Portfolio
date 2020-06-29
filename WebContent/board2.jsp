@@ -12,6 +12,15 @@
 <header>
 <h1>猫愛好家</h1>
 </header>
+<ul>
+      <li> 
+      <span class="icon-plus"></span>
+         <a class="menu-link" href="http://localhost:8080/Portfolio/ChatServlet">チャット一覧</a>
+      </li></ul>
+      <ul>
+         <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet">コスメ好きな人！</a></li>
+         <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet3">旅行好きな人集まれ~！</a></li>
+      </ul>
 <div class="logout">
 <a class="lgout" href="http://localhost:8080/Portfolio/LoginServlet">ログアウト</a>
 </div>
