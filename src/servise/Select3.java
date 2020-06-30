@@ -9,6 +9,13 @@ import dao.Dao3;
 import dbAccess.DBAccess4;
 import dto.MessageDto;
 
+/**
+ * DBAccessインターフェースを実装する検索クラス<br>
+ * 全てのデータをArrayListとして取得する
+ * @author user
+ *
+ */
+
 public class Select3 implements DBAccess4 {
 
 	@Override

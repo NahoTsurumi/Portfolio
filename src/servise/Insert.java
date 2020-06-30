@@ -7,6 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import dao.Dao;
 import dbAccess.DBAccess2;
 
+/**
+ * DBAccessインターフェースを実装する登録クラス<br>
+ * パラメータに受取った入力値をDBに登録する
+ * @author user
+ *
+ */
+
 public class Insert implements DBAccess2 {
 
 	public void execute(HttpServletRequest request) throws SQLException {
@@ -15,7 +22,6 @@ public class Insert implements DBAccess2 {
 		String input = request.getParameter("text");
 	
 
-		
 		try {
 			dao = new Dao();
 			if(dao.insertData(input) > 0) {

@@ -12,22 +12,25 @@ public class ProfileBean implements Serializable {
 	
 	
 	
-	
+	//入力されたユーザーネームを受け取る
 	public String getName() {
 		return name;
 	}
 
-public void setName(String name) {
+	//入力されたユーザーネームを出力
+	public void setName(String name) {
 	this.name = name;
-}
+	}
 
-public String getPass() {
+	//入力されたパスワードを受け取る
+	public String getPass() {
 	return pass;
-}
+	}
 
-public void setPass(String pass) {
+	//入力されたパスワードを出力
+	public void setPass(String pass) {
 	this.pass = pass;
 	// TODO 自動生成されたメソッド・スタブ
 	
-}
+	}
 }

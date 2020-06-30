@@ -7,6 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import dao.Dao3;
 import dbAccess.DBAccess4;
 
+/**
+ * DBAccessインターフェースを実装する登録クラス<br>
+ * パラメータに受取った入力値をDBに登録する
+ * @author user
+ *
+ */
+
 public class Insert3 implements DBAccess4 {
 
 	@Override

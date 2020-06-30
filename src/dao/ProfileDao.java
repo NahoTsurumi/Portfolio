@@ -15,12 +15,22 @@ public class ProfileDao {
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 	
+	/**
+	 * DB接続コンストラクタ<br>
+	 * インスタンス化時にDB接続が行われる
+	 * @throws SQLException
+	 */
+	
 	public ProfileDao() throws SQLException {
 		String url = "jdbc:mysql://localhost:3306/dbportfo?serverTimezone=UTC";
 		String user = "root";
 		String pass = "949714";
 		con = DriverManager.getConnection(url, user, pass);
 	}
+	
+	/**
+	 * DB接続を切るためのメソッド
+	 */
 	
 	public void close() {
 		try {
@@ -29,6 +39,14 @@ public class ProfileDao {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * ログイン時のデータ照合
+	 * @param name 名前
+	 * @param pass　パスワード
+	 * @return ログイン成功時...1 <br>ログイン失敗時...0
+	 * @throws SQLException
+	 */
 	
 	public int getLoginInfo(String name, String pass) throws SQLException {
 		int row = 0;
@@ -52,6 +70,12 @@ public class ProfileDao {
 		}
 		return row;
 	}
+	
+	
+	/**
+	 * メソッド
+	 */
+	
 	
 	public int insertAccount(ProfileBean pBean) throws SQLException {
 		sql = "INSERT INTO user (name, password) VALUES (?, ?)";

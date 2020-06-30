@@ -9,10 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import bean.ProfileBean;
-import dbAccess.SelectForLogin;
 
 /**
  * Servlet implementation class ChatServlet
@@ -22,15 +18,9 @@ public class ChatServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      
 	
-	
+	//チャット一覧ページのボタンが押された時に行なう処理
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
-		
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-		
-			System.out.println("ログインしていません");
-		}
 		
 		
 		ServletContext context = getServletContext();
@@ -39,13 +29,4 @@ public class ChatServlet extends HttpServlet {
 		
 		
 	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response, SelectForLogin dbAccess, ProfileBean pBean) 
-			throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-	
-		
-		
-		
-}
 }

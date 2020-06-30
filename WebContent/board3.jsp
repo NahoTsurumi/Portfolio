@@ -21,13 +21,11 @@
     <p class="message">${message}</p>
 </c:if>
 
-<ul>
-      <li><a class="menu-link" href="http://localhost:8080/Portfolio/ChatServlet">チャット一覧</a>
-      </li></ul>
-      <ul>
-         <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet">コスメ好きな人！</a></li>
-         <li><a class="head" href="http://localhost:8080/Portfolio/BoardServlet2">猫愛好家</a></li>
-      </ul>
+<a class="menu-link" href="http://localhost:8080/Portfolio/ChatServlet">チャット一覧</a>
+	<br>
+     <a class="menu-link" href="http://localhost:8080/Portfolio/BoardServlet2">猫愛好家</a>
+     <br>
+     <a class="menu-link" href="http://localhost:8080/Portfolio/BoardServlet3">旅行好きな人集まれ~！</a>
 
 <form action="BoardServlet3" method="post">
  <div class="textbox">

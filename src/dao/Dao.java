@@ -21,6 +21,11 @@ public class Dao {
 	 private Connection con;
 	 private String sql;
 	 
+	 /**
+		 * DB接続コンストラクタ<br>
+		 * インスタンス化時にDB接続が行われる
+		 * @throws SQLException
+		 */
 	 
 	 public Dao() throws SQLException {
 		 
@@ -32,6 +37,10 @@ public class Dao {
 		 
 	 }
 	 
+	 /**
+		 * DB接続を切るためのメソッド
+		 */
+	 
 	 public void close() {
 		 try {
 			 if(con != null) con.close();
@@ -39,6 +48,13 @@ public class Dao {
 			 e.printStackTrace();
 		 }
 	 }
+	 
+	 /**
+		 * DBに保存されているデータを全件取得するメソッド<br>
+		 * DBから取得後、件数分のdtoに1レコードずつ情報を持たせてしてArrayListに格納<br>
+		 * @return ID列で降順にソートしたArrayList
+		 * @throws SQLException
+		 */
 	 
 	 public ArrayList<MessageDto> getListAll() throws SQLException {
 		 
@@ -70,23 +86,43 @@ public class Dao {
 		 
 	 }
 	 
+	 /**
+		 * データ登録メソッド<br>
+		 * SQL文とパラメータをexecuteUpdateメソッドに渡す
+		 * @param input (受け取った入力値)
+		 * @return 成功件数
+		 * @throws SQLException
+		 */
+	 
 	 public int insertData(String input) throws SQLException {
 		 String sql = "INSERT INTO tweet (content) VALUES(?)";
 		 return executeUpdate(sql, input);
 	 }
 	 
+	 /**
+		 * データ削除メソッド<br>
+		 * SQL文とパラメータをexecuteUpdateメソッドに渡す
+		 * @param id (削除するデータのid)
+		 * @return 成功件数
+		 * @throws SQLException
+		 */
 	 
-	 
-	 public int delete(String id) throws SQLException {
+	 	public int delete(String id) throws SQLException {
 		 String sql ="delete from tweet where id = ?";
 		 return executeUpdate(sql, id);
 		}
 	 
 	 
+	 /**
+		 * 登録、削除処理を担当するメソッド<br>
+		 * 使用するメソッドは共通のため汎用化
+		 * @param sql (SQL文)
+		 * @param param (INパラメータ)
+		 * @return 成功件数
+		 * @throws SQLException
+		 */
 	 
-
-
-	private int executeUpdate(String sql, String param) throws SQLException {
+	 	private int executeUpdate(String sql, String param) throws SQLException {
 		 PreparedStatement ps = null;
 		 int n = 0;
 		 
@@ -104,40 +140,20 @@ public class Dao {
 		 return n;
 	 }
 
+	 	/**
+		 * 数値判定メソッド<br>
+		 * 引数に受け取った値が数値に変換できなければ例外発生
+		 * @param num (パラメータ)
+		 * @return 数値...true, 文字列...false 
+		 */
 	
-	private boolean isNumber(String num) {
-		 try {
-			 Integer.parseInt(num);
-			 return true;
-		 } catch (NumberFormatException e) {
-			 return false;
-		 }
-	 }
-	
-	
-	 public ArrayList<MessageDto> getMessageFromcontent(String content) throws SQLException {
-			
-		 	sql ="SELECT * from tweet where content like ?";
-		 	ps = con.prepareStatement(sql);
-		 	ps.setString(1, "%" + content + "%");
-		 	return search(ps);
-		}
-
-	private ArrayList<MessageDto> search(PreparedStatement ps) throws SQLException {
-		
-		try {
-			rs = ps.executeQuery();
-			list = new ArrayList<>();
-			MessageDto dto;
-			while(rs.next()) {
-				dto = new MessageDto();
-				dto.setContent(rs.getString("content"));
-				list.add(dto);
-			}
-		} finally {
-			ps.close();
-		}
-		
-		return list;
+	 	private boolean isNumber(String num) {
+	 		try {
+	 			Integer.parseInt(num);
+	 			return true;
+	 		} catch (NumberFormatException e) {
+	 			return false;
+	 		}
+	 	}
 	}
-}
+

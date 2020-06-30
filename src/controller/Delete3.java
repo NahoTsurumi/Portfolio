@@ -6,6 +6,13 @@ import javax.servlet.http.HttpServletRequest;
 import dao.Dao3;
 import dbAccess.DBAccess4;
 
+/**
+ * DBAccessインターフェースを実装する削除クラス<br>
+ * DBからパラメータに受取ったIDのデータを削除する
+ * @author user
+ *
+ */
+
 public class Delete3 implements DBAccess4 {
 
 	@Override

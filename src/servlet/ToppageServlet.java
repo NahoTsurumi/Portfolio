@@ -17,9 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 public class ToppageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+	//トップページのボタンが押された時に行なう処理
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServletContext context = getServletContext();
 		RequestDispatcher dis = context.getRequestDispatcher("/TopPage.jsp");

@@ -7,6 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import dao.Dao;
 import dbAccess.DBAccess2;
 
+
+/**
+ * DBAccessインターフェースを実装する削除クラス<br>
+ * DBからパラメータに受取ったIDのデータを削除する
+ * @author user
+ *
+ */
 public class Delete implements DBAccess2 {
 
 	public void execute(HttpServletRequest request) throws SQLException {

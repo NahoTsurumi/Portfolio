@@ -49,19 +49,24 @@ public class Regist extends HttpServlet {
 		pBean.setName(name);
 		pBean.setPass(pass);
 		
+		//例外処理
 		try {
 			ProfileDao dao = new ProfileDao();
 			
-			if(dao.insertAccount(pBean)>0) {
+			//ユーザーネームとパスワードが入力された場合
+			if(dao.insertAccount(pBean)> 0) {
 				ServletContext context = getServletContext();
 				RequestDispatcher dis = context.getRequestDispatcher("/Login.jsp");
 				dis.forward(request, response);
-				
+			
+			//そうでない場合
 			} else {
 				doGet(request, response);
 			}
+			
+			//ユーザーネームまたはパスワードが既に使われていた場合
 		}  catch (SQLException e) {
-			request.setAttribute("message", "そのパスワードは使用されています");
+			request.setAttribute("message", "そのユーザーネームまたはパスワードは使用されています");
 			e.printStackTrace();
 			doGet(request, response);
 		}

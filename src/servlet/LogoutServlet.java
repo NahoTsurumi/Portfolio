@@ -18,21 +18,18 @@ public class LogoutServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// セッションの取得(なければnullが返ってくる)
 		HttpSession session = request.getSession(false);
 		
+		// セッションの破棄
 		if (null != session) {
 			
 			session.invalidate();
 			System.out.println("ログアウトしました");
 			
 		}
-		
+		//サイトへ移動
 		response.sendRedirect("http://localhost:8080/Portfolio/ToppageServlet");
-		
-	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
 
